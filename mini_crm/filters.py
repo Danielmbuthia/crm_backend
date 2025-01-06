@@ -12,6 +12,9 @@ class LeadFilter(django_filters.FilterSet):
 
 
 class ContactFilter(django_filters.FilterSet):
+    # In case needed 
+    lead = django_filters.NumberFilter(field_name='lead', lookup_expr='exact', label='Lead') 
+    lead_name = django_filters.CharFilter(field_name='lead__name', lookup_expr='icontains', label='Lead Name')
     class Meta:
         model = Contact
         fields = {

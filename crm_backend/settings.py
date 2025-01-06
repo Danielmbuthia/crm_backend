@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'django_filters',
+    'django_celery_beat',
     # local apps
     'mini_crm'
 ]
@@ -130,3 +131,21 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# celery 
+CELERY_BROKER_URL = 'redis://localhost:6379/0' 
+CELERY_ACCEPT_CONTENT = ['json'] 
+CELERY_TASK_SERIALIZER = 'json' 
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0' 
+CELERY_TIMEZONE = 'UTC' 
+
+
+# email
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = 'a36e4686658d30'
+EMAIL_HOST_PASSWORD = '8c57dcb1135a69'
+EMAIL_PORT = '2525'
+EMAIL_FROM = "no-reply@gmail.com"
