@@ -148,4 +148,3 @@ EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
 EMAIL_HOST_USER = 'a36e4686658d30'
 EMAIL_HOST_PASSWORD = '8c57dcb1135a69'
 EMAIL_PORT = '2525'
-EMAIL_FROM = "no-reply@gmail.com"
